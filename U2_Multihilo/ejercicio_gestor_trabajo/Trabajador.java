@@ -1,21 +1,24 @@
-package U2_Multihilo.resolucion.gestor_trabajo;
+package U2_Multihilo.T3;
 
 public class Trabajador extends Thread {
-  private Trabajo trabajo;
+
+  Trabajo trabajo;
 
   public Trabajador(Trabajo trabajo, String nombre) {
     this.trabajo = trabajo;
-    setName(nombre);
+    this.setName(nombre);
   }
 
-  @Override
   public void run() {
-    int contador = 0;
-    while (!trabajo.isObjetivo_alcanzado() && !trabajo.isQuebrado()) {
-      trabajo.hacerTarea();
-      contador++;
+    int i = 0;
+    while (!trabajo.quiebra && !trabajo.objetivoCumplido) {
+      trabajo.realizarTarea();
+      i++;
     }
     System.out.println(
-        Thread.currentThread().getName() + " ha terminado un número total de tareas: " + contador);
+        Thread.currentThread().getName()
+            + " ha terminado su trabajo con un total de "
+            + i
+            + " tareas realizadas");
   }
 }
