@@ -23,8 +23,6 @@ public class mainDNS {
 
                 // 3. El hilo pasa a estado RUNNABLE
                 hilo.start();
-
-
             }
 
             // Cierre de conexión principal del servidor
