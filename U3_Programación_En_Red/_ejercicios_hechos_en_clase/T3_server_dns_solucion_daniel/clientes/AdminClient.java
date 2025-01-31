@@ -1,6 +1,6 @@
-package U3_Red.clase.tarea_3_dns_daniel.clientes;
+package dbrusev.clientes;
 
-import U3_Red.clase.tarea_3_dns_daniel.server.Token;
+import dbrusev.server.Token;
 
 import java.io.*;
 import java.net.ConnectException;

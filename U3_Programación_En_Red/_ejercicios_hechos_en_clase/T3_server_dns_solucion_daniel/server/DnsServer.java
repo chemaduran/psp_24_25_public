@@ -1,4 +1,4 @@
-package U3_Red.clase.tarea_3_dns_daniel.server;
+package dbrusev.server;
 
 import java.io.*;
 import java.net.ServerSocket;

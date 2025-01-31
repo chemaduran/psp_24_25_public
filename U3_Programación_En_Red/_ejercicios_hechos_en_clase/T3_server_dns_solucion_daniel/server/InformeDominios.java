@@ -1,4 +1,4 @@
-package U3_Red.clase.tarea_3_dns_daniel.server;
+package dbrusev.server;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -32,13 +32,18 @@ public class InformeDominios implements Serializable {
     }
 
     public String informeOrdenado() {
-        Collections.sort(informeDominios);
+        String informeOrdenado = "[SIN DATOS EN EL REGISTRO]";
 
-        StringBuilder informeOrdenado = new StringBuilder();
-        for (String dominio : informeDominios) {
-            informeOrdenado.append(dominio.replace(";", " => ") + "\n");
+        if (informeDominios != null ) {
+            Collections.sort(informeDominios);
+
+            StringBuilder cadenaInforme = new StringBuilder();
+            for (String dominio : informeDominios)
+                cadenaInforme.append(dominio.replace(";", " => ") + "\n");
+
+            informeOrdenado = cadenaInforme.toString();
         }
 
-        return informeOrdenado.toString();
+        return informeOrdenado;
     }
 }

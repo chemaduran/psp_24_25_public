@@ -1,4 +1,4 @@
-package U3_Red.clase.tarea_3_dns_daniel.server;
+package dbrusev.server;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -6,7 +6,7 @@ import java.io.ObjectOutputStream;
 import java.net.Socket;
 import java.util.concurrent.atomic.AtomicInteger;
 
-class HiloConexion implements Runnable {
+public class HiloConexion implements Runnable {
 
     private static GestorDominios gestorDominios;
     private final Socket conexion;
@@ -43,7 +43,6 @@ class HiloConexion implements Runnable {
                         flujoSalidaDatos.flush();
                         break;
                     case "ALL": // Listar dominios
-                        System.out.println(gestorDominios.getLISTA_DOMINIOS());
                         flujoSalidaDatos.writeObject(new InformeDominios(gestorDominios.getLISTA_DOMINIOS()));
                         flujoSalidaDatos.flush();
                         break;
